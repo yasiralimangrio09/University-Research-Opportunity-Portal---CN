@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Research Opportunity Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="brand">
+                <div class="brand-icon">R</div>
+                <div>
+                    <h1>Research Portal</h1>
+                    <p>University Research Opportunities</p>
+                </div>
+            </div>
+            <span class="header-label">Student Research Hub</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-section">
+            <div>
+                <p class="eyebrow">DISCOVER · LEARN · CONTRIBUTE</p>
+                <h2>Find your next research opportunity.</h2>
+                <p class="welcome-text">
+                    Explore research projects, discover faculty mentors,
+                    and find opportunities that match your skills.
+                </p>
+            </div>
+            <div class="welcome-symbol">R<span>+</span></div>
+        </section>
+
+        <section class="toolbar">
+            <div>
+                <h2>Available Opportunities</h2>
+                <p>Explore projects and manage research opportunities.</p>
+            </div>
+            <button id="show-form-button" class="primary-button" type="button">
+                + Add Opportunity
+            </button>
+        </section>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <section id="form-section" class="panel hidden">
+            <div class="panel-heading">
+                <div>
+                    <h2 id="form-title">Create Opportunity</h2>
+                    <p>Enter the research opportunity details below.</p>
+                </div>
+                <button id="cancel-form-button" class="secondary-button"
+                    type="button">Cancel</button>
+            </div>
+
+            <form id="opportunity-form">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="title">Opportunity Title *</label>
+                        <input id="title" name="title" type="text"
+                            maxlength="200" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="research_area">Research Area *</label>
+                        <input id="research_area" name="research_area"
+                            type="text" maxlength="100" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="faculty_name">Faculty Name *</label>
+                        <input id="faculty_name" name="faculty_name"
+                            type="text" maxlength="100" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="department">Department *</label>
+                        <input id="department" name="department"
+                            type="text" maxlength="100" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="required_skills">Required Skills *</label>
+                        <input id="required_skills" name="required_skills"
+                            type="text" required
+                            placeholder="e.g. Python, Machine Learning">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="available_positions">Available Positions *</label>
+                        <input id="available_positions" name="available_positions"
+                            type="number" min="1" step="1" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="application_deadline">Application Deadline *</label>
+                        <input id="application_deadline" name="application_deadline"
+                            type="date" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="status">Status *</label>
+                        <select id="status" name="status" required>
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field full-width">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description"
+                            rows="4" required
+                            placeholder="Describe the research project and its goals."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button id="save-button" class="primary-button" type="submit">
+                        Save Opportunity
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="opportunities-list" class="opportunities-grid">
+            <p class="loading-text">Loading opportunities from the server...</p>
+        </section>
+
+        <section id="details-section" class="panel hidden">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">OPPORTUNITY DETAILS</p>
+                    <h2 id="details-title">Research Opportunity</h2>
+                </div>
+                <button id="close-details-button" class="secondary-button"
+                    type="button">Close Details</button>
+            </div>
+            <div id="opportunity-details"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>University Research Opportunity Portal · Computer Networks Assignment</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

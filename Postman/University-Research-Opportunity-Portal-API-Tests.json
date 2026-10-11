@@ -1,0 +1,333 @@
+{
+  "info": {
+    "_postman_id": "7b1c5e14-4243-40f4-88c8-37aa0fa9d2ae",
+    "name": "University Research Opportunity Portal API Tests",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58868480",
+    "_collection_link": "https://go.postman.co/collection/58868480-7b1c5e14-4243-40f4-88c8-37aa0fa9d2ae?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Opportunities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get One Opportunity",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Opportunity",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Postman API Testing Assistant\",\r\n  \"description\": \"A sample research project created to verify the POST endpoint.\",\r\n  \"research_area\": \"Software Engineering\",\r\n  \"faculty_name\": \"Dr. Ahmed Khan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python, REST APIs, SQL\",\r\n  \"available_positions\": 2,\r\n  \"application_deadline\": \"2026-12-15\",\r\n  \"status\": \"Open\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Postman API Testing Assistant - Updated\",\r\n  \"description\": \"Updated research project used to verify the PUT endpoint.\",\r\n  \"research_area\": \"Software Engineering\",\r\n  \"faculty_name\": \"Dr. Ahmed Khan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python, REST APIs, SQL, Testing\",\r\n  \"available_positions\": 3,\r\n  \"application_deadline\": \"2026-12-20\",\r\n  \"status\": \"Open\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities/10",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Close Opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Postman API Testing Assistant - Updated\",\r\n  \"description\": \"Updated research project used to verify the PUT endpoint.\",\r\n  \"research_area\": \"Software Engineering\",\r\n  \"faculty_name\": \"Dr. Ahmed Khan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python, REST APIs, SQL, Testing\",\r\n  \"available_positions\": 3,\r\n  \"application_deadline\": \"2026-12-20\",\r\n  \"status\": \"Closed\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities/10",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Opportunity",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities/10",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Deleted Opportunity Returns 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities/10",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalid Request - Missing Title",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"description\": \"Testing missing required title.\",\r\n  \"research_area\": \"Artificial Intelligence\",\r\n  \"faculty_name\": \"Dr. Ahmed Khan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python\",\r\n  \"available_positions\": 2,\r\n  \"application_deadline\": \"2026-12-15\",\r\n  \"status\": \"Open\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Opportunity 01",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Machine Learning Research Assistant\",\r\n  \"description\": \"Research project exploring machine learning models for student performance prediction.\",\r\n  \"research_area\": \"Machine Learning\",\r\n  \"faculty_name\": \"Dr. Ahmed Khan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python, Pandas, Scikit-learn\",\r\n  \"available_positions\": 2,\r\n  \"application_deadline\": \"2026-12-15\",\r\n  \"status\": \"Open\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Opportunity 02",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Network Security Research Project\",\r\n  \"description\": \"Study network traffic and investigate methods for detecting suspicious activity.\",\r\n  \"research_area\": \"Network Security\",\r\n  \"faculty_name\": \"Dr. Sara Malik\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Computer Networks, Python, Wireshark\",\r\n  \"available_positions\": 3,\r\n  \"application_deadline\": \"2026-12-20\",\r\n  \"status\": \"Open\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Opportunity 03",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Database Performance Analysis\",\r\n  \"description\": \"Investigate database query performance and compare indexing strategies.\",\r\n  \"research_area\": \"Database Systems\",\r\n  \"faculty_name\": \"Dr. Ali Hassan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"SQL, MySQL, Database Design\",\r\n  \"available_positions\": 1,\r\n  \"application_deadline\": \"2026-12-25\",\r\n  \"status\": \"Open\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
