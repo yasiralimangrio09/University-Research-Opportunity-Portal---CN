@@ -169,15 +169,23 @@ async function loadOpportunities() {
         opportunities.forEach((opportunity) => {
             opportunitiesList.appendChild(createOpportunityCard(opportunity));
         });
-    } catch (error) {
-        opportunitiesList.replaceChildren(
-            createElement(
-                "p",
-                "empty-state",
-                `Could not load opportunities: ${error.message}. Make sure the backend is running.`
-            )
-        );
-    }
+} catch (error) {
+    opportunitiesList.replaceChildren(
+        createElement(
+            "p",
+            "empty-state",
+            "Unable to load research opportunities. " +
+            "Please check that the backend and database are running, " +
+            "then refresh the page."
+        )
+    );
+
+    showMessage(
+        "Could not connect to the API. Check the backend connection and try again.",
+        "error"
+    );
+}
+
 }
 
 // Open a blank form for creating an opportunity.
@@ -247,13 +255,26 @@ opportunityForm.addEventListener("submit", async (event) => {
         "application_deadline"
     ];
 
-    for (const fieldName of requiredFields) {
-        if (!String(opportunity[fieldName] ?? "").trim()) {
-            showMessage("Please fill in all required fields.", "error");
-            document.getElementById(fieldName).focus();
-            return;
-        }
+for (const fieldName of requiredFields) {
+    if (!String(opportunity[fieldName] ?? "").trim()) {
+        const field = document.getElementById(fieldName);
+        const label = document.querySelector(
+            `label[for="${fieldName}"]`
+        );
+
+        const fieldNameText = label
+            ? label.textContent.replace("*", "").trim()
+            : fieldName;
+
+        showMessage(
+            `${fieldNameText} is required. Please enter a value.`,
+            "error"
+        );
+
+        field.focus();
+        return;
     }
+}
 
     if (
         !Number.isInteger(opportunity.available_positions) ||
